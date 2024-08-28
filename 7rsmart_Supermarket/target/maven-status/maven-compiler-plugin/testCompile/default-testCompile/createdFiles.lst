@@ -1,0 +1,5 @@
+testCases\BaseClass.class
+testCases\HomePageTest.class
+testCases\ManageCategoryTestPage.class
+constant\Constant.class
+testCases\LoginPageTest.class

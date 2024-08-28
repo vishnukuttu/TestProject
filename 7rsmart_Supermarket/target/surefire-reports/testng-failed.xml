@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [7rsmartSupermarketSuite]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="utilities.ExtenetReport"/>
+    <listener class-name="utilities.RetryListener"/>
+  </listeners>
+  <test thread-count="2" parallel="tests" name="ChromeTest(failed)" verbose="0">
+    <parameter name="Browser" value="Chrome"/>
+    <classes>
+      <class name="testCases.ManageCategoryTestPage">
+        <methods>
+          <include name="verifyToAddSubCategory"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+          <include name="verifyTheSearchSubCategory"/>
+        </methods>
+      </class> <!-- testCases.ManageCategoryTestPage -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+</suite> <!-- Failed suite [7rsmartSupermarketSuite] -->
