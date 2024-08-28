@@ -1,0 +1,22 @@
+<suite name="MyTestSuite">
+	<test name="MyTest">
+		<groups>
+			<run>
+				<!-- <include name="Welcome to smoke test"></include>-->
+            <exclude name="Welcome to smoke test"></exclude>
+			</run>
+		</groups>
+		<classes>
+			<class name="basicTestNG.annotationTest">
+
+			</class>
+			<class name="basicTestNG.PriorityTest">
+
+			</class>
+			<class name="basicTestNG.ScrollTest">
+
+			</class>
+
+		</classes>
+	</test>
+</suite>
