@@ -12,9 +12,7 @@ public class HomePage {
 	{
 		this.driver = driver;// 9th line
 		PageFactory.initElements(driver, this); // PageFactory with POM@findbynotation we can declare element
-
 	}
-
 	@FindBy(xpath = "//p[text()='Dashboard']")
 	WebElement dashboard;
 	@FindBy(xpath = "//a//p[text()='Manage Product']")
@@ -25,10 +23,14 @@ public class HomePage {
 	public String getDashboardText() {
 		String dashboardtext = dashboard.getText();
 		return dashboardtext;
-
 	}
-
 	public boolean enabledProduct() {
 		return (manageProduct.isEnabled());
+	}
+	public String getgiftVoucherstext()
+	{
+		giftVouchers.isEnabled();
+		return giftVouchers.getText();
+		
 	}
 }
