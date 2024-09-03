@@ -3,16 +3,15 @@
 <suite thread-count="2" parallel="tests" name="Failed suite [7rsmartSupermarketSuite]" guice-stage="DEVELOPMENT">
   <listeners>
     <listener class-name="utilities.ExtenetReport"/>
-    <listener class-name="utilities.RetryListener"/>
   </listeners>
   <test thread-count="2" parallel="tests" name="ChromeTest(failed)">
     <parameter name="Browser" value="Chrome"/>
     <classes>
       <class name="testCases.ManageCategoryTestPage">
         <methods>
-          <include name="verifyToAddSubCategory"/>
           <include name="afterMethod"/>
           <include name="beforeMethod"/>
+          <include name="verifyTheSearchSubCategory"/>
         </methods>
       </class> <!-- testCases.ManageCategoryTestPage -->
     </classes>

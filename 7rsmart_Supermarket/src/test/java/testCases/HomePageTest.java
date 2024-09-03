@@ -21,5 +21,8 @@ public class HomePageTest extends BaseClass {
 	  //Assert.assertEquals(actualProduct, true, "Verified");
 	  Assert.assertEquals(hp.enabledProduct(), true, "Verified");
 	  //isselected,isenabled
+	  String expected = hp.getgiftVoucherstext();
+	  String actual="Manage Gift cards &vouchers";
+	  Assert.assertEquals(actual,expected,"Manage Gift cards &vouchers not matching with dashboard");
   }
 }

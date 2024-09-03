@@ -32,6 +32,10 @@ public class GeneralUtilities {
 		WebElement selectElement1 = object.getFirstSelectedOption();
 		return selectElement1.getText();
 	}
+	public void selectDropdownbyText(WebElement element, String text) {
+		Select select = new Select(element);
+		select.selectByVisibleText(text);
+	}
 
 	public String selectVisibleTextFromDropDown(WebElement element, String visibleTest) {
 		Select object = new Select(element);

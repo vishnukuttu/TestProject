@@ -2,7 +2,7 @@
 <suite name="7rsmartSupermarketSuite" parallel="tests" thread-count="2">
 		<listeners>		
 			<listener class-name="utilities.ExtenetReport"></listener>
-		    <listener class-name="utilities.RetryListener"></listener>
+		    <!-- <listener class-name="utilities.RetryListener"></listener>-->
 			
 		</listeners>
 		<test name="ChromeTest">

@@ -35,7 +35,7 @@ public class LoginPageTest extends BaseClass // we can acccessbaseclass
 		lp.sendPassword(passWord);
 		lp.signIn();
 		String actual = lp.getErrorMessage();
-		String expected = "Alert!1";
+		String expected = "Alert!";
 		Assert.assertEquals(actual, expected,Constant.lp_verifyLoginWithINValidData );
 		// hard assertion,// Assert.softassertion-Code // will not terminate, it//
 		// continue
@@ -47,9 +47,16 @@ public class LoginPageTest extends BaseClass // we can acccessbaseclass
 	}
 
 	@Test
-	public static void loginDatas() throws IOException {
+	public void loginDatas() throws IOException {
 		String data = ExcelUtilities.getStringData(1, 0, "Sheet1");
 		String data1 = ExcelUtilities.getStringData(1, 1, "Sheet1");
-		System.out.println(data + data1);
+		lp = new LoginPage(driver);//
+		hp = new HomePage(driver);
+		lp.sendUserName(data);
+		lp.sendPassword(data1);
+		lp.signIn();
+		String actual = hp.getDashboardText();
+		String expected = "Dashboard";
+		Assert.assertEquals(actual, expected, Constant.lp_verifyLoginWithValidData);
 	}
 }

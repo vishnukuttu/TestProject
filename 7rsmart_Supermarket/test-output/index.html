@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-7rsmartSupermarketSuite" class="navigator-link">
-              <span class="suite-name border-passed">7rsmartSupermarketSuite</span>
+              <span class="suite-name border-failed">7rsmartSupermarketSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-7rsmartSupermarketSuite" class="navigator-link ">
-                    <span>C:\Users\vishn\eclipse-workspace\7rsmart_Supermarket\TestNewTestCases.xml</span>
+                    <span>C:\Users\vishn\git\TestProject\7rsmart_Supermarket\TestNewTestCases.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,21 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-7rsmartSupermarketSuite" class="hide-methods passed suite-7rsmartSupermarketSuite"> (hide)</a> <!-- hide-methods passed suite-7rsmartSupermarketSuite -->
-                      <a href="#" panel-name="suite-7rsmartSupermarketSuite" class="show-methods passed suite-7rsmartSupermarketSuite"> (show)</a> <!-- show-methods passed suite-7rsmartSupermarketSuite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-7rsmartSupermarketSuite" class="hide-methods failed suite-7rsmartSupermarketSuite"> (hide)</a> <!-- hide-methods failed suite-7rsmartSupermarketSuite -->
+                      <a href="#" panel-name="suite-7rsmartSupermarketSuite" class="show-methods failed suite-7rsmartSupermarketSuite"> (show)</a> <!-- show-methods failed suite-7rsmartSupermarketSuite -->
                     </span>
-                    <div class="method-list-content passed suite-7rsmartSupermarketSuite">
+                    <div class="method-list-content failed suite-7rsmartSupermarketSuite">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-7rsmartSupermarketSuite" title="testCases.ManageCategoryTestPage" class="method navigator-link" hash-for-method="verifyToAddSubCategory">verifyToAddSubCategory</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-7rsmartSupermarketSuite" title="testCases.ManageCategoryTestPage" class="method navigator-link" hash-for-method="verifyTheSearchSubCategory">verifyTheSearchSubCategory</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-7rsmartSupermarketSuite -->
+                    </div> <!-- method-list-content failed suite-7rsmartSupermarketSuite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -119,25 +119,54 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-7rsmartSupermarketSuite" class="panel 7rsmartSupermarketSuite">
-          <div class="suite-7rsmartSupermarketSuite-class-passed">
+          <div class="suite-7rsmartSupermarketSuite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">testCases.ManageCategoryTestPage</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyToAddSubCategory">
-                  </a> <!-- verifyToAddSubCategory -->
-                  <span class="method-name">verifyToAddSubCategory</span>
+                  <a name="verifyTheSearchSubCategory">
+                  </a> <!-- verifyTheSearchSubCategory -->
+                  <span class="method-name">verifyTheSearchSubCategory</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=128.0.6613.86)
+Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.10&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [001ccec9536b0959627e83d085d35f47, clickElement {id=f.65A94F1707F7A067976FAEE78BF6854D.d.482E48155C740799BAFC2D4BA9B90E69.e.73}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.86, chrome: {chromedriverVersion: 128.0.6613.86 (3045ed680fda..., userDataDir: C:\Users\vishn\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57997}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57997/devtoo..., se:cdpVersion: 128.0.6613.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (001ccec9536b0959627e83d085d35f47)] -&gt; xpath: //a[@class=&apos;btn btn-default btn-fix&apos;]]
+Session ID: 001ccec9536b0959627e83d085d35f47
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
+	at elementRepository.ManageCategoryPage.resetUrl(ManageCategoryPage.java:156)
+	at testCases.ManageCategoryTestPage.verifyTheSearchSubCategory(ManageCategoryTestPage.java:76)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-7rsmartSupermarketSuite-class-passed -->
+          </div> <!-- suite-7rsmartSupermarketSuite-class-failed -->
         </div> <!-- panel 7rsmartSupermarketSuite -->
         <div panel-name="test-xml-7rsmartSupermarketSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\vishn\eclipse-workspace\7rsmart_Supermarket\TestNewTestCases.xml</span>
+            <span class="header-content">C:\Users\vishn\git\TestProject\7rsmart_Supermarket\TestNewTestCases.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -146,7 +175,6 @@
 &lt;suite thread-count=&quot;2&quot; parallel=&quot;tests&quot; name=&quot;7rsmartSupermarketSuite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;utilities.ExtenetReport&quot;/&gt;
-    &lt;listener class-name=&quot;utilities.RetryListener&quot;/&gt;
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;2&quot; parallel=&quot;tests&quot; name=&quot;ChromeTest&quot;&gt;
     &lt;parameter name=&quot;Browser&quot; value=&quot;Chrome&quot;/&gt;
@@ -193,14 +221,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyToAddSubCategory')
+data.setCell(0, 1, 'verifyTheSearchSubCategory')
 data.setCell(0, 2, 'testCases.ManageCategoryTestPage')
-data.setCell(0, 3, 6372);
+data.setCell(0, 3, 3461);
 window.suiteTableData['7rsmartSupermarketSuite']= { tableData: data, tableDiv: 'times-div-7rsmartSupermarketSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 14 seconds</span>
+              <span class="suite-total-time">Total running time: 6 seconds</span>
               <div id="times-div-7rsmartSupermarketSuite">
               </div> <!-- times-div-7rsmartSupermarketSuite -->
             </div> <!-- times-div -->
@@ -215,9 +243,20 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-7rsmartSupermarketSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">3 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">testCases.ManageCategoryTestPage</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">verifyToAddSubCategory</span>
+                <br/>
+                <span class="ignored-method-name">verifyTheDeleteSubCategory</span>
+                <br/>
+                <span class="ignored-method-name">verifyTheEditSubCategory</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-7rsmartSupermarketSuite" class="panel">
@@ -232,12 +271,14 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyToAddSubCategory</span>
-                <span class="method-start">6721 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyTheSearchSubCategory</span>
+                <span class="method-start">2322 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">afterMethod([TestResult name=verifyToAddSubCategory status=SUCCESS method=ManageCategoryTestPage.verifyToAddSubC...)</span>
-                <span class="method-start">13126 ms</span>
+                <span class="method-name">afterMethod([TestResult name=verifyTheSearchSubCategory status=FAILURE method=ManageCategoryTestPage.verifyTheSe...)</span>
+                <span class="method-start">5812 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

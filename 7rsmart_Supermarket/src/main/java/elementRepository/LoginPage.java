@@ -23,7 +23,7 @@ public class LoginPage
 		this.driver = driver;// 9th line
 		PageFactory.initElements(driver, this); // PageFactory with POM@findbynotation we can declare element
 	}
-
+	
 	@FindBy(name = "username") // with page factory
 	WebElement userNameField;// Pagefactory- design pattern
 	@FindBy(name = "password") // @Findby== webelement locate cheyan
@@ -32,7 +32,7 @@ public class LoginPage
 	WebElement signInButton;
 	@FindBy(xpath = "//h5[text()=' Alert!']")
 	WebElement errorMessage;
-
+	
 	public void sendUserName(String userName) {
 		userNameField.sendKeys(userName);
 	}
@@ -54,7 +54,4 @@ public class LoginPage
 		return gu.getTextElement(errorMessage);
 	}
 
-	public void loginDatas() {
-
-	}
 }

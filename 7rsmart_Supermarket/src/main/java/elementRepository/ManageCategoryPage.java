@@ -14,10 +14,11 @@ import utilities.GeneralUtilities;
 import utilities.WaitUtilities;
 
 public class ManageCategoryPage {
+	
 	WebDriver driver;
 	GeneralUtilities gu = new GeneralUtilities();
 	WaitUtilities wu = new WaitUtilities();
-	String SubCategory;
+	String SubCategory,DeletedElement;
 
 	public ManageCategoryPage(WebDriver driver) // Constructor
 	{
@@ -47,7 +48,7 @@ public class ManageCategoryPage {
 	WebElement firstElementinTable;
 	@FindBy(xpath="//a[@class='btn btn-rounded btn-primary']")
 	WebElement searchElementMain;
-    @FindBy(xpath="form-control selectpicker")
+    @FindBy(id = "un")
     WebElement searchSelectCategory;
     @FindBy(xpath="//button[@class='btn btn-danger btn-fix']")
     WebElement searchButtonElement;
@@ -55,8 +56,20 @@ public class ManageCategoryPage {
     WebElement subCategorywriteElement;
     @FindBy(xpath="//center[text()='.........RESULT NOT FOUND.......']")
     WebElement resultNotFoundElement;
-    
-    
+    @FindBy(xpath="//tbody//tr//td[1]")
+    WebElement ListSubCategoryTableCheck;
+    @FindBy(xpath="//a[@class='btn btn-default btn-fix']")
+    WebElement resetclick;
+    @FindBy(xpath="//tbody//tr[1]//td[1]")
+    WebElement FirstElementInSubCategoryTable;
+    @FindBy(xpath="//a[@class='btn btn-sm btn btn-danger btncss']")
+    WebElement Deleteclick;
+    @FindBy(xpath="//tbody//tr[1]//td[5]//a[@class='btn btn-sm btn btn-primary btncss']//i[@class='fas fa-edit']")
+    WebElement editClick;
+    @FindBy(xpath="//input[@id='subcategory']")
+    WebElement subCategoryTextEdit;
+    @FindBy(xpath="//button[@name='update']")
+    WebElement updateClick;
 	public void waitforCategoryClick() {
 		wu.fluentwaitForPresenceOfElementtext(driver, categoryClick, "Category");
 	}
@@ -78,9 +91,7 @@ public class ManageCategoryPage {
 		this.SubCategory = SubCategory;
 		newSubcategory.sendKeys(SubCategory);// why not taking dates??
 		newSave.submit();
-
 		return (alertNotifysuccess.getText());
-
 	}
 
 	public String getSubCategoryName() {
@@ -111,14 +122,75 @@ public class ManageCategoryPage {
 			}
 		}
 		return element.getText();
-
 	}
-   public void searchCategoryclick(int a)
+   public void searchCategoryclick(String value) throws InterruptedException
    {
 	   searchElementMain.click();
-	   gu.selectIndexFromDropDown(searchSelectCategory,a);
-	   searchButtonElement.click();
-	   subCategorywriteElement.getText();
-	   
+	   gu.selectDropdownbyText(searchSelectCategory,value);
+	   Thread.sleep(100);
    }
+   public void subCategoryValue(String subCategoryValue) {
+	   subCategorywriteElement.sendKeys(subCategoryValue);
+	   
+	}
+   public String subCategoryValue1()
+   {
+	   return subCategorywriteElement.getText();
+   }
+   public void searchTheInputValues()
+   {
+	   searchButtonElement.click();
+   }
+   public String subCategorywriteElementCheck()
+   {
+	  // System.out.println(ListSubCategoryTableCheck.getText());
+	   return  ListSubCategoryTableCheck.getText();//fri
+   }
+   public String getURl()
+   {
+	   return driver.getCurrentUrl();
+   }
+   public String resetUrl()
+   {
+	   ///wait add
+	   resetclick.click();
+	   
+	  // driver.getCurrentUrl();
+	   return driver.getCurrentUrl();
+   }
+   
+   
+   public void VerifyDeletionInSubCategoryTable(String DeletedElement1)
+   {
+	   Deleteclick.click();
+	   Alert alert =driver.switchTo().alert();
+		alert.accept();
+	   //WebElement element = null;
+		List<WebElement> rowCountElement = driver.findElements(
+				By.xpath("//table[@class='table table-bordered table-hover table-sm']//tbody//tr//td[1]"));
+		int count = (rowCountElement.size());
+		System.out.println(count);// 20
+		System.out.println(DeletedElement1);
+		for (int i = 0; i < count; i++) // in list 1st element is zero, so 1 cannot be i
+		{
+			if (rowCountElement.get(i).getText().equals((DeletedElement1))) 
+				{
+				System.out.println("Deletion not successfull");
+				break;
+			}
+		   else 
+		   {
+			   System.out.println("Deletion successfull");		 
+		   }
+		}
+   }
+	public String verifyEditInSubCategoryTable(String editSubCategorytext)
+	{
+		editClick.click();
+		subCategoryTextEdit.sendKeys(editSubCategorytext);
+		updateClick.click();
+		return firstElementinTable.getText();
+	}
+		
+   
 }
